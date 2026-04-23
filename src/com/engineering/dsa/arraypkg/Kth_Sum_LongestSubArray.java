@@ -1,8 +1,6 @@
 package com.engineering.dsa.arraypkg;
 
-import java.time.Duration;
-
-public class LongestSubArrayWithSumK {
+public class Kth_Sum_LongestSubArray {
 
     private static int longestSubArrayWithSumK_BruteForce(int[] arr, int k) {
         if (arr == null || arr.length == 0) return 0;

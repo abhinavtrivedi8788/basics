@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class K_LargestElementInArray {
+public class Kth_LargestElementInArray {
 
 
     // Brute Force - Time: O(n log n) , Space: depends on sort

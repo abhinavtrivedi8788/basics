@@ -1,0 +1,29 @@
+package com.engineering.dsa.arraypkg;
+
+public class LongestSubArrayWithSumK {
+
+    private static int longestSubArrayWithSumK_BruteForce(int[] arr, int k) {
+        if (arr == null || arr.length == 0) return 0;
+        int maxLength = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int sum = 0;
+            for (int j = i; j < arr.length; j++) {
+                sum += arr[j];
+                if (sum == k) {
+                    return Math.max(maxLength, j - i + 1); // current length of sub array is j - i + 1
+                }
+            }
+        }
+        return maxLength;
+    }
+
+
+    static void main() {
+        int[] arr = {1, 2, 3, 7, 5, 6, 9};
+        int k = 15;
+        int maxLength = longestSubArrayWithSumK_BruteForce(arr, k);
+        System.out.println("Longest Sub Array with sum K : " + maxLength);
+    }
+
+
+}

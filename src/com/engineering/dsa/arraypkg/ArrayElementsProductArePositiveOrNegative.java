@@ -1,6 +1,8 @@
 package com.engineering.dsa.arraypkg;
 
-public class ArrayElementMultiplication {
+import java.util.Arrays;
+
+public class ArrayElementsProductArePositiveOrNegative {
 
     private static int findIfMultiplicationOfElementsIsPositiveNegativeOrZero(int[] array) {
         int counter =0;
@@ -17,6 +19,12 @@ public class ArrayElementMultiplication {
         }
     }
 
+    private static int findPositiveOrNegativeUsingStream(int[] array) {
+        return Arrays.stream(array)
+                .anyMatch(number -> number == 0) ? 0 :
+                (int) Arrays.stream(array).filter(number -> number < 0).count() % 2 == 0 ? 1 : -1;
+    }
+
 
 
     static void main() {
@@ -26,6 +34,10 @@ public class ArrayElementMultiplication {
         System.out.println("Product of all elements in array 1 is : "+findIfMultiplicationOfElementsIsPositiveNegativeOrZero(array1));
         System.out.println("Product of all elements in array 2 is :  "+findIfMultiplicationOfElementsIsPositiveNegativeOrZero(array2));
         System.out.println("Product of all elements in array 3 is :  "+findIfMultiplicationOfElementsIsPositiveNegativeOrZero(array3));
+
+        System.out.println("Product of all elements in array 1 is : "+findPositiveOrNegativeUsingStream(array1));
+        System.out.println("Product of all elements in array 2 is :  "+findPositiveOrNegativeUsingStream(array2));
+        System.out.println("Product of all elements in array 3 is :  "+findPositiveOrNegativeUsingStream(array3));
     }
 
 }

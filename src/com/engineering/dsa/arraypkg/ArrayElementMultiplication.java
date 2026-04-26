@@ -1,7 +1,5 @@
 package com.engineering.dsa.arraypkg;
 
-import java.util.Arrays;
-
 public class ArrayElementMultiplication {
 
     private static int findIfMultiplicationOfElementsIsPostiveNegativeOrZero(int[] array) {

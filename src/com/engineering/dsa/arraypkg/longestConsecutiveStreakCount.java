@@ -32,7 +32,7 @@ public class longestConsecutiveStreakCount {
     }
 
     static void main() {
-        int [] array = new int[] {0,3,7,2,5,8,4,6,0,1,10};
+        int [] array = new int[] {100,4,200,0,1,3,2};
         int longestConsecutiveStreakCount = findLongestConsecutiveStreakCount(array);
         System.out.println("Longest Consecutive Streak Count : "+longestConsecutiveStreakCount);
     }

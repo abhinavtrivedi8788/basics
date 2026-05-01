@@ -1,6 +1,7 @@
 package com.engineering.streams;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -66,5 +67,21 @@ public class Filters {
 
         System.out.println("\n Employee with Salary less than 4K");
         partitioningBy.get(false).forEach(System.out::println);
+
+
+        // to skip the N element and sort the rest of the element based on org name
+        List<Organisation> skipSorted = org.stream()
+                .skip(1)
+                .sorted(Comparator.comparing(Organisation::getOrgName))
+                .collect(Collectors.toList());
+
+        skipSorted.forEach(organisation ->  System.out.println( "\n SKIP : "   + organisation.getOrgName()));
+
+        // to limit the N elements and sort the rest of the elements based on org name
+        List<Organisation> limitSorted = org.stream()
+                .limit(1)
+                .sorted(Comparator.comparing(Organisation::getOrgName))
+                .toList();
+        limitSorted.forEach(organisation ->  System.out.println("\n LIMIT : " + organisation.getOrgName()));
     }
 }

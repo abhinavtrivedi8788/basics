@@ -11,7 +11,7 @@ public class Organisation {
     Organisation(String orgName, String location, List<Employee> employees) {
         OrgName = orgName;
         this.location = location;
-        this.employees = employees;
+        this.employees = employees.stream().map(Employee::new).toList(); // deep copy - best practices
     }
     public String getOrgName() {
         return OrgName;

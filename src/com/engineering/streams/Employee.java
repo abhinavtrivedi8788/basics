@@ -6,6 +6,16 @@ public class Employee {
     private int age;
     private double salary;
 
+    public Employee(){
+    }
+
+    //copy constructor
+    public Employee(Employee employee) {
+        this.firstName = employee.getFirstName();
+        this.lastName = employee.getLastName();
+        this.age = employee.getAge();
+        this.salary = employee.getSalary();
+    }
 
     public Employee(String firstName, String lastName, int age, double salary) {
         this.firstName = firstName;

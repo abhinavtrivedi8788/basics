@@ -3,6 +3,7 @@ package com.engineering.streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class Filters {
     private static List<Employee> createEmployeesForGoogle() {
@@ -36,12 +37,17 @@ public class Filters {
         // find the Employee whose as age greater than 20 and salary is greater that 1000 in both org.
         List<String> list = org.stream()
                 .flatMap(emp -> emp.getEmployees().stream())
-                .filter(employee -> employee.getAge() > 20 && employee.getSalary() > 1000)
+                .filter(employee -> employee.getAge() > 20 && employee.getSalary() > 40000)
                 .map(employee -> employee.getFirstName() + " " + employee.getLastName())
                 .toList();
         list.forEach(System.out::println);
 
-        org.stream().forEach(System.out::println);
+        List<Organisation> organization = org.stream()
+                .filter(o -> o.getEmployees()
+                        .stream()
+                        .anyMatch(employee -> employee.getFirstName().equalsIgnoreCase("Charlie")))
+                .toList();
+        System.out.println(organization);
 
     }
 

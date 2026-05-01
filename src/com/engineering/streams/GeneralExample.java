@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  * 
  * All intermediate operations are lazy, so they’re not executed until a result of processing is needed.
  *
- * <a href="https://stackify.com/streams-guide-java-8//"> Stream Tutorial</a>
+ * <a href="https://stackify.com/streams-guide-java-8/"> Stream Tutorial</a>
  *
  */
 

@@ -1,9 +1,6 @@
 package com.engineering.streams;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -42,7 +39,8 @@ public class Filters {
                 .filter(employee -> employee.getAge() > 20 && employee.getSalary() > 40000)
                 .map(employee -> employee.getFirstName() + " " + employee.getLastName())
                 .toList();
-        list.forEach(System.out::println);
+        list.forEach(e->System.out.println("\nEmployee in flat map : " +e));
+
 
         List<Organisation> organization = org.stream()
                 .filter(o -> o.getEmployees()

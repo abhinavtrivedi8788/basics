@@ -21,10 +21,33 @@ public class GroupAnagram {
         return new ArrayList<>(map.values());
     }
 
+    private static List<List<String>> groupAnagramWhenInputIsList(List <String> strArray) {
+        Map<String, List<String>> map = new HashMap<>();
+        for(int i =0; i < strArray.size(); i++) {
+            String word = strArray.get(i);
+            char[] charArray = word.toCharArray();
+            Arrays.sort(charArray);
+            String key = new String(charArray);
+            if(!map.containsKey(key)) {
+                List<String> list = new ArrayList<>();
+                list.add(word);
+                map.put(key, list);
+            }else {
+                map.get(key).add(word);
+            }
+        }
+        return new ArrayList<>(map.values());
+    }
+
+
 
     static void main() {
         String[] strArray = {"eat", "tea", "tan", "ate", "nat", "bat"};
         List<List<String>> lists = groupAnagram(strArray);
         System.out.println("Anagram are : " + lists);
-    }
+
+        List<String> strList = Arrays.asList(strArray);
+        System.out.println("Anagram are in list : " + groupAnagramWhenInputIsList(strList));
+
+       }
 }

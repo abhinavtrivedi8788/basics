@@ -47,13 +47,13 @@ public class DiverseStringWithNoThreeConsecutiveChar {
         return max <= 2 * (others + 1);
     }
 
-    public static void main(String[] args) {
-
+    static void main(String[] args) {
         System.out.println(
                 smallestDiverseString(3, 2, 1));
 
         System.out.println(
                 smallestDiverseString(4, 1, 1));
+
         System.out.println(
                 smallestDiverseString(1, 4, 4));
 

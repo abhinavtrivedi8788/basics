@@ -34,7 +34,7 @@ public class DiverseStringWithNoThreeConsecutiveChar {
             }
 
             if (!placed)
-                return ""; // no valid arrangement exists
+                return "Not Possible "; // no valid arrangement exists
         }
 
         return sb.toString();
@@ -59,5 +59,7 @@ public class DiverseStringWithNoThreeConsecutiveChar {
 
         System.out.println(
                 smallestDiverseString(2, 2, 2));
+        System.out.println(
+                smallestDiverseString(7, 1, 1));
     }
 }

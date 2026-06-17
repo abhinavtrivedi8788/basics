@@ -23,16 +23,15 @@ public class GroupAnagram {
 
     private static List<List<String>> groupAnagramWhenInputIsList(List <String> strArray) {
         Map<String, List<String>> map = new HashMap<>();
-        for(int i =0; i < strArray.size(); i++) {
-            String word = strArray.get(i);
+        for (String word : strArray) {
             char[] charArray = word.toCharArray();
             Arrays.sort(charArray);
             String key = new String(charArray);
-            if(!map.containsKey(key)) {
+            if (!map.containsKey(key)) {
                 List<String> list = new ArrayList<>();
                 list.add(word);
                 map.put(key, list);
-            }else {
+            } else {
                 map.get(key).add(word);
             }
         }

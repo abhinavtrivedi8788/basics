@@ -1,7 +1,5 @@
 package com.engineering.strings;
 
-import java.util.PriorityQueue;
-
 public class DiverseStringWithNoThreeConsecutiveChar {
 
     public static String smallestDiverseString(int a, int b, int c) {

@@ -40,7 +40,7 @@ public class Kth_LargestElementInArray {
 
     static void main() {
         int[] array = new int[]{0, 1, 4, 6, 9, 22, 8, 44, 99, 2, 7, 7, 6};
-        System.out.println("Kth Largest Element in array - BRUTE FORCE : "+ kLargestElementInArray_Bruteforce(array, 3));
+        System.out.println("Kth Largest Element in array - BRUTE FORCE : "+ kLargestElementInArray_Bruteforce(array, 4));
         System.out.println("Kth Largest Element in array - MAX HEAP    : "+ kLargestElementInArray_MAX_HEAP(array, 4));
         System.out.println("Kth Largest Element in array - MIN HEAP    : " + kLargestElementInArray_MIN_HEAP(array, 4));
     }

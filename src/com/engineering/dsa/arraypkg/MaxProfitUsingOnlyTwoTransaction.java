@@ -20,7 +20,7 @@ public class MaxProfitUsingOnlyTwoTransaction {
     }
 
     static void main() {
-        int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
+        int[] prices = {7,10,1,3,6,9,2};
         System.out.println("Max Profit with at most two transactions: " + maxProfit(prices));
     }
 }
